@@ -18,8 +18,8 @@ import javax.swing.JPanel;
 
 public class ShowImageJFrame extends JFrame{
     private Point mousePt;
-    private static int W = 2644;
-    private static int H = 1161;
+    private static int W = 1920;
+    private static int H = 1080;
     private Point origin = new Point(W / 2, H / 2);
 
     public ShowImageJFrame(String imagePath){
@@ -81,18 +81,23 @@ public class ShowImageJFrame extends JFrame{
           double amount = Math.pow(1.1, e.getScrollAmount());
           if(e.getWheelRotation() < 0) {
             // zoom in
-            double temp = (double)W * amount;
-            W = (int)temp;
-            temp = (double)H * amount;
-            H = (int)temp;
-            repaint();
+            if(W <= 1920*4 || H <= 1080*4){ // limits zoom in
+              double temp = (double)W * amount;
+              W = (int)temp;
+              temp = (double)H * amount;
+              H = (int)temp;
+              origin.setLocation(mousePt);
+              repaint();
+            }
           } else {
             // zoom out
-            double temp = (double)W / amount;
-            W = (int)temp;
-            temp = (double)H / amount;
-            H = (int)temp;
-            repaint();
+            if(W >= 1920 && H >= 1080){ // limits zoom out
+              double temp = (double)W / amount;
+              W = (int)temp;
+              temp = (double)H / amount;
+              H = (int)temp;
+              repaint();
+            }
           }
         }
       });
@@ -110,6 +115,6 @@ public class ShowImageJFrame extends JFrame{
       return new Dimension(W, H);
     }
     public static void main(String[] args){
-        new ShowImageJFrame("test2.jpg");
+        new ShowImageJFrame("lib/test images/test3.jpg");
     }
 }
