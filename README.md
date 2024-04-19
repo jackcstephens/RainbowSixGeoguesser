@@ -1,19 +1,11 @@
-## Getting Started
+## WORK IN PROGRESS
+## Rainbow Six Siege GeoGuesser
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This game will mimic the GeoGuesser format, however, this time, it will use locations from Tom Clancy's Rainbow Six Siege. It will feature:
 
-## Folder Structure
+- `Easy Mode`: You will be given random cameras and must match it to the map and exact location on the map earning points based on accuracy 
+- `Hard Mode`: You will be given random drone shots and must match it to the map and exact location on the map earning points based on accuracy 
+- `Statistics`: At the end of each round, see your avg accuracy, total points, and other data about your run
+- `Leaderboard`: Plans for a leaderboard for the top scores are on the way
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
-"# RainbowSixGeoguesser" 
+> This is gonna take a while
